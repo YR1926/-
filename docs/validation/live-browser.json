@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-19",
+  "url": "https://yr1926.github.io/-/",
+  "browser": "155.0.4283.62",
+  "checks": [
+    "HTTPS home and all linked scripts/styles return 200",
+    "3D select and lesson navigation",
+    "horizontal chronicle scrolling",
+    "interactive experiment arithmetic",
+    "Python download matches source",
+    "notes survive reload",
+    "JSON export/import to fresh mobile context",
+    "390px mobile emulation and touch buttons",
+    "full Markdown export accessible"
+  ],
+  "mobileScope": "Chromium mobile emulation; no physical Android or iPhone test",
+  "errors": [],
+  "failedResponses": []
+}
