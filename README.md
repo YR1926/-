@@ -4,7 +4,11 @@
 
 ## ★★★★★ 立即使用
 
-完整解压后双击 index.html，或 Windows 的“打开知识库.cmd”。阅读、年表、三维卡片与交互实验无需安装环境、登录或联网。外部来源链接需联网；运行 PyTorch 脚本需另装 torch。
+**只想学习：直接下载仓库中的 [看见智能.html](看见智能.html)，双击打开，无需解压。** 在 GitHub 文件页点击“Download raw file”下载文件，不要保存 GitHub 的代码预览网页。文件内含全部课程、知识网络、年表、交互实验和可下载代码；请用 Edge 或 Chrome 打开，外部参考链接需联网，运行 PyTorch 仍需另装 torch。
+
+需要维护或让 Agent 按文件检索：使用完整目录，双击 index.html 或 Windows 的“打开知识库.cmd”。两个入口来自同一份源文件。单文件版也可在“使用与维护”下载整课程 Markdown 给 Agent，或在知识点页面单独导出。
+
+从旧入口换到单文件版前，请在“我的记录”导出备份，再在新入口导入；复制 HTML 不会带走浏览器中的进度。以后用同名新版替换旧 HTML，并保留 JSON 备份。详见 [单文件使用说明](docs/单文件使用.md)。
 
 ## ★★★★★ 本版学习范围
 
@@ -16,7 +20,7 @@
 
 “完整”仅指当前定义的36课入门主线已有正文，不代表覆盖整个ML/DL领域。所有正文仍为Agent整理草稿，待教师审核。
 
-## ★★★★★ 年表与知识卡
+## ★★★★★ 年表与知识网络
 
 二维年表采用从左到右的学习主轴，上下交错放置章节卡片。左右按钮、横向滚动、章节跳转和“定位下一课”都可用；点击卡片进入正文。轴表达建议学习顺序，不是算法发明年代，也不是全部先修关系。
 
@@ -47,6 +51,7 @@ python tools/build.py
 python tools/validate.py
 python tools/check_examples.py
 python tools/package.py
+python tools/standalone.py
 ```
 
 算法检查需要torch；浏览器验收脚本需要维护者另配Playwright。详见 [维护指南](docs/维护指南.md)、[验证记录](docs/验证记录.md) 和 [建设方案](docs/建设方案.md)。

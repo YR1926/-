@@ -1,0 +1,26 @@
+{
+  "edition": "custom-entry",
+  "version": "0.3.0",
+  "browser": "155.0.4283.62",
+  "nodes": 62,
+  "lessons": 44,
+  "mainLessons": 36,
+  "checks": [
+    "constellation default, real node click, 3D rotation/zoom/select/open",
+    "horizontal alternating chronicle, scroll, chapter jumps and lesson links",
+    "36 main lessons, 26 isolated electives, 18 explicit outlines",
+    "stage filters",
+    "3 new experiments arithmetic",
+    "62 nodes navigation",
+    "code panels",
+    "old progress including retired nodes",
+    "notes persistence and fresh-context export/import",
+    "invalid library rejected atomically",
+    "gradient and convolution arithmetic",
+    "RL course filter",
+    "responsive 390/768",
+    "offline zero HTTP requests"
+  ],
+  "errors": [],
+  "requests": []
+}

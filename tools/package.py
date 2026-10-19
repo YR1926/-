@@ -10,14 +10,15 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def main():
-    for script in ['build.py','validate.py']:
+    # standalone.py refreshes and validates the shared sources before bundling.
+    for script in ['standalone.py']:
         subprocess.run([sys.executable,str(ROOT/'tools'/script)],check=True)
     version=json.loads((ROOT/'curriculum.json').read_text(encoding='utf-8'))['version']
     releases=ROOT.parent/'releases'
     releases.mkdir(exist_ok=True)
     archive=releases/f'ai-cv-learning-{version}.zip'
     allowed_dirs={'content','site','sources','agent','templates','docs','tools','examples','export'}
-    allowed_files={'README.md','AGENTS.md','LICENSE.md','THIRD_PARTY.md','CHANGELOG.md','curriculum.json','catalog.json','index.html','打开知识库.cmd'}
+    allowed_files={'README.md','AGENTS.md','LICENSE.md','THIRD_PARTY.md','CHANGELOG.md','curriculum.json','catalog.json','index.html','看见智能.html','打开知识库.cmd'}
     allowed_suffixes={'.md','.json','.html','.css','.js','.cjs','.py','.cmd','.svg','.png'}
     files=[]
     for p in sorted(ROOT.rglob('*')):
