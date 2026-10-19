@@ -1,0 +1,156 @@
+{
+  "d2l-algebra": {
+    "title": "动手学深度学习：线性代数",
+    "url": "https://zh.d2l.ai/chapter_preliminaries/linear-algebra.html",
+    "published": "配套英文书籍 2023 年；在线章节持续更新",
+    "accessed": "2026-10-19",
+    "sections": "标量、向量、矩阵、点积"
+  },
+  "d2l-calculus": {
+    "title": "动手学深度学习：微积分",
+    "url": "https://zh.d2l.ai/chapter_preliminaries/calculus.html",
+    "published": "配套英文书籍 2023 年；在线章节持续更新",
+    "accessed": "2026-10-19",
+    "sections": "导数、偏导数、梯度、链式法则"
+  },
+  "d2l-probability": {
+    "title": "动手学深度学习：概率",
+    "url": "https://zh.d2l.ai/chapter_preliminaries/probability.html",
+    "published": "配套英文书籍 2023 年；在线章节持续更新",
+    "accessed": "2026-10-19",
+    "sections": "基本概率论、期望"
+  },
+  "d2l-linear": {
+    "title": "动手学深度学习：线性回归",
+    "url": "https://zh.d2l.ai/chapter_linear-networks/linear-regression.html",
+    "published": "配套英文书籍 2023 年；在线章节持续更新",
+    "accessed": "2026-10-19",
+    "sections": "模型、训练数据、损失函数、梯度下降"
+  },
+  "sklearn-split": {
+    "title": "scikit-learn：交叉验证与模型评估",
+    "url": "https://scikit-learn.org/stable/modules/cross_validation.html",
+    "published": "持续更新；页面无统一发布日期",
+    "accessed": "2026-10-19",
+    "sections": "训练/测试划分、交叉验证、分组与时间序列划分"
+  },
+  "d2l-mlp": {
+    "title": "动手学深度学习：多层感知机",
+    "url": "https://zh.d2l.ai/chapter_multilayer-perceptrons/mlp.html",
+    "published": "配套英文书籍 2023 年；在线章节持续更新",
+    "accessed": "2026-10-19",
+    "sections": "隐藏层、激活函数、ReLU"
+  },
+  "d2l-conv": {
+    "title": "动手学深度学习：图像卷积",
+    "url": "https://zh.d2l.ai/chapter_convolutional-neural-networks/conv-layer.html",
+    "published": "配套英文书籍 2023 年；在线章节持续更新",
+    "accessed": "2026-10-19",
+    "sections": "互相关运算、卷积层、边缘检测"
+  },
+  "cs231n": {
+    "title": "Stanford CS231n：Deep Learning for Computer Vision",
+    "url": "https://cs231n.stanford.edu/",
+    "published": "2026 年春季课程",
+    "accessed": "2026-10-19",
+    "sections": "课程简介与学习目标"
+  },
+  "sklearn-metrics": {
+    "title": "scikit-learn：模型评估指标",
+    "url": "https://scikit-learn.org/stable/modules/model_evaluation.html",
+    "sections": "混淆矩阵、precision、recall、F1 与评价目标",
+    "published": "持续更新；无统一发布日期",
+    "accessed": "2026-10-19"
+  },
+  "sklearn-trees": {
+    "title": "scikit-learn：决策树",
+    "url": "https://scikit-learn.org/stable/modules/tree.html",
+    "sections": "划分、不纯度与过拟合",
+    "published": "持续更新；无统一发布日期",
+    "accessed": "2026-10-19"
+  },
+  "sklearn-clusters": {
+    "title": "scikit-learn：聚类",
+    "url": "https://scikit-learn.org/stable/modules/clustering.html",
+    "sections": "K-means 目标与初始化",
+    "published": "持续更新；无统一发布日期",
+    "accessed": "2026-10-19"
+  },
+  "sklearn-pca": {
+    "title": "scikit-learn：分解与 PCA",
+    "url": "https://scikit-learn.org/stable/modules/decomposition.html",
+    "sections": "中心化、主成分与降维",
+    "published": "持续更新；无统一发布日期",
+    "accessed": "2026-10-19"
+  },
+  "torch-basics": {
+    "title": "PyTorch：Learn the Basics",
+    "url": "https://docs.pytorch.org/tutorials/beginner/basics/intro.html",
+    "sections": "张量、自动微分、数据加载与优化",
+    "published": "持续更新；无统一发布日期",
+    "accessed": "2026-10-19"
+  },
+  "torch-optim": {
+    "title": "PyTorch：Optimizing Model Parameters",
+    "url": "https://docs.pytorch.org/tutorials/beginner/basics/optimization_tutorial.html",
+    "sections": "zero_grad、backward、step 与 train/test loop",
+    "published": "持续更新；无统一发布日期",
+    "accessed": "2026-10-19"
+  },
+  "torch-dqn": {
+    "title": "PyTorch：Reinforcement Learning (DQN) Tutorial",
+    "url": "https://docs.pytorch.org/tutorials/intermediate/reinforcement_q_learning.html",
+    "sections": "经验回放、目标网络、TD 目标与终止状态",
+    "published": "持续更新；无统一发布日期",
+    "accessed": "2026-10-19"
+  },
+  "spin-intro": {
+    "title": "OpenAI Spinning Up：Key Concepts in RL",
+    "url": "https://spinningup.openai.com/en/latest/spinningup/rl_intro.html",
+    "sections": "状态与观测、策略、回报、价值与 Bellman 方程",
+    "published": "持续更新；无统一发布日期",
+    "accessed": "2026-10-19"
+  },
+  "spin-ppo": {
+    "title": "OpenAI Spinning Up：Proximal Policy Optimization",
+    "url": "https://spinningup.openai.com/en/latest/algorithms/ppo.html",
+    "sections": "PPO-Clip、on-policy、概率比与裁剪的局限",
+    "published": "持续更新；无统一发布日期",
+    "accessed": "2026-10-19"
+  },
+  "sutton-barto": {
+    "title": "Sutton 与 Barto：Reinforcement Learning: An Introduction，第二版",
+    "url": "http://incompleteideas.net/book/the-book-2nd.html",
+    "sections": "第2、3、4、6、13章；本轮概念辅以 Spinning Up 核对",
+    "published": "2018",
+    "accessed": "2026-10-19"
+  },
+  "torch-conv": {
+    "title": "PyTorch：Conv2d",
+    "url": "https://docs.pytorch.org/docs/stable/generated/torch.nn.Conv2d.html",
+    "published": "持续更新；无统一发布日期",
+    "accessed": "2026-10-19",
+    "sections": "卷积输出形状、分组与参数"
+  },
+  "d2l-resnet": {
+    "title": "动手学深度学习：残差网络",
+    "url": "https://zh.d2l.ai/chapter_convolutional-modern/resnet.html",
+    "published": "配套英文书籍2023年；在线持续更新",
+    "accessed": "2026-10-19",
+    "sections": "残差映射、恒等路径、投影捷径"
+  },
+  "torch-transfer": {
+    "title": "PyTorch：Transfer Learning for Computer Vision Tutorial",
+    "url": "https://docs.pytorch.org/tutorials/beginner/transfer_learning_tutorial.html",
+    "published": "持续更新；无统一发布日期",
+    "accessed": "2026-10-19",
+    "sections": "微调、冻结特征、训练增强与验证预处理"
+  },
+  "d2l-pooling": {
+    "title": "动手学深度学习：汇聚层",
+    "url": "https://zh.d2l.ai/chapter_convolutional-neural-networks/pooling.html",
+    "published": "配套英文书籍2023年；在线持续更新",
+    "accessed": "2026-10-19",
+    "sections": "最大/平均池化、步幅、降采样和通道"
+  }
+}

@@ -1,0 +1,1934 @@
+[
+  {
+    "id": "math-vectors",
+    "title": "标量、向量与矩阵：给数据一个形状",
+    "stage": "math",
+    "summary": "用可观察的例子认识维度、长度、行列与图像通道。",
+    "prerequisites": [],
+    "related": [
+      "cv-convolution",
+      "torch-tensors"
+    ],
+    "sources": [
+      "d2l-algebra"
+    ],
+    "tags": [
+      "线性代数",
+      "向量",
+      "矩阵",
+      "shape",
+      "张量"
+    ],
+    "path": "content/math-vectors.md",
+    "version": 1,
+    "reviewStatus": "draft",
+    "minutes": 40,
+    "objectives": [
+      "能说出标量、向量与矩阵的区别",
+      "能解释一张 RGB 图像的 H×W×3 形状"
+    ],
+    "demo": null,
+    "round": 1,
+    "available": true,
+    "backlinks": [
+      "math-dot",
+      "ml-problem",
+      "torch-tensors",
+      "cv-convolution"
+    ]
+  },
+  {
+    "id": "math-dot",
+    "title": "点积：把多个线索合成一个分数",
+    "stage": "math",
+    "summary": "逐项相乘再相加，理解加权求和和相似性的边界。",
+    "prerequisites": [
+      "math-vectors"
+    ],
+    "related": [
+      "ml-linear",
+      "dl-neuron"
+    ],
+    "sources": [
+      "d2l-algebra"
+    ],
+    "tags": [
+      "点积",
+      "权重",
+      "加权求和",
+      "dot product"
+    ],
+    "path": "content/math-dot.md",
+    "version": 1,
+    "reviewStatus": "draft",
+    "minutes": 35,
+    "objectives": [
+      "能手算两个三维向量的点积",
+      "能解释权重对分数的影响"
+    ],
+    "demo": "dot",
+    "round": 1,
+    "available": true,
+    "backlinks": [
+      "math-matmul",
+      "ml-linear",
+      "ml-knn",
+      "dl-neuron"
+    ]
+  },
+  {
+    "id": "math-functions",
+    "title": "函数与坐标：看懂输入如何变成输出",
+    "stage": "math",
+    "summary": "从 y = 2x + 1 建立坐标、斜率、截距与模型的直觉。",
+    "prerequisites": [],
+    "related": [
+      "ml-linear",
+      "math-derivative"
+    ],
+    "sources": [
+      "d2l-calculus",
+      "d2l-linear"
+    ],
+    "tags": [
+      "函数",
+      "斜率",
+      "截距",
+      "坐标"
+    ],
+    "path": "content/math-functions.md",
+    "version": 1,
+    "reviewStatus": "draft",
+    "minutes": 35,
+    "objectives": [
+      "能计算一次函数的输出",
+      "能区分输入变量和待学习参数"
+    ],
+    "demo": null,
+    "round": 1,
+    "available": true,
+    "backlinks": [
+      "math-derivative",
+      "math-probability",
+      "ml-linear"
+    ]
+  },
+  {
+    "id": "math-derivative",
+    "title": "导数：衡量一个地方变得有多快",
+    "stage": "math",
+    "summary": "通过差商与切线理解局部变化率，为梯度下降做准备。",
+    "prerequisites": [
+      "math-functions"
+    ],
+    "related": [
+      "ml-gradient",
+      "dl-backprop"
+    ],
+    "sources": [
+      "d2l-calculus"
+    ],
+    "tags": [
+      "导数",
+      "微积分",
+      "梯度",
+      "切线"
+    ],
+    "path": "content/math-derivative.md",
+    "version": 1,
+    "reviewStatus": "draft",
+    "minutes": 45,
+    "objectives": [
+      "能解释导数的符号与大小",
+      "能手算 f(x)=x² 在指定位置的导数"
+    ],
+    "demo": "derivative",
+    "round": 1,
+    "available": true,
+    "backlinks": [
+      "math-chain",
+      "ml-gradient"
+    ]
+  },
+  {
+    "id": "math-probability",
+    "title": "均值与概率：描述数据中的不确定性",
+    "stage": "math",
+    "summary": "认识样本频率、概率、平均值以及类别不平衡。",
+    "prerequisites": [
+      "math-functions"
+    ],
+    "related": [
+      "ml-split",
+      "ml-metrics"
+    ],
+    "sources": [
+      "d2l-probability"
+    ],
+    "tags": [
+      "概率",
+      "均值",
+      "期望",
+      "统计"
+    ],
+    "path": "content/math-probability.md",
+    "version": 1,
+    "reviewStatus": "draft",
+    "minutes": 40,
+    "objectives": [
+      "能计算样本频率和算术平均值",
+      "能解释为什么准确率可能掩盖问题"
+    ],
+    "demo": null,
+    "round": 1,
+    "available": true,
+    "backlinks": [
+      "math-statistics",
+      "ml-split",
+      "ml-loss",
+      "ml-logistic",
+      "dl-softmax",
+      "rl-mdp",
+      "modern-diffusion"
+    ]
+  },
+  {
+    "id": "math-matmul",
+    "title": "矩阵乘法与批量线性变换",
+    "stage": "math",
+    "summary": "从一个点积推广到一批样本，检查每个轴的含义。",
+    "prerequisites": [
+      "math-dot"
+    ],
+    "related": [],
+    "sources": [
+      "d2l-algebra"
+    ],
+    "tags": [],
+    "path": "content/math-matmul.md",
+    "version": 2,
+    "reviewStatus": "draft",
+    "minutes": 45,
+    "objectives": [
+      "从一个点积推广到一批样本，检查每个轴的含义。",
+      "能完成本页算例，并解释方法的适用条件与常见误区。"
+    ],
+    "demo": null,
+    "implementation": "torch_ml.py",
+    "round": 1,
+    "available": true,
+    "backlinks": [
+      "ml-unsupervised",
+      "torch-tensors",
+      "dl-mlp",
+      "cv-channels",
+      "modern-attention"
+    ]
+  },
+  {
+    "id": "math-chain",
+    "title": "偏导数、梯度与链式法则",
+    "stage": "math",
+    "summary": "理解自动微分背后的局部导数传递。",
+    "prerequisites": [
+      "math-derivative"
+    ],
+    "related": [],
+    "sources": [
+      "d2l-calculus"
+    ],
+    "tags": [],
+    "path": "content/math-chain.md",
+    "version": 2,
+    "reviewStatus": "draft",
+    "minutes": 45,
+    "objectives": [
+      "理解自动微分背后的局部导数传递。",
+      "能完成本页算例，并解释方法的适用条件与常见误区。"
+    ],
+    "demo": null,
+    "implementation": "torch_foundations.py",
+    "round": 1,
+    "available": true,
+    "backlinks": [
+      "dl-backprop"
+    ]
+  },
+  {
+    "id": "math-statistics",
+    "title": "采样、方差与实验不确定性",
+    "stage": "math",
+    "summary": "理解为什么一次高分不足以支持稳定有效的结论。",
+    "prerequisites": [
+      "math-probability"
+    ],
+    "related": [],
+    "sources": [
+      "sklearn-split"
+    ],
+    "tags": [],
+    "path": "content/math-statistics.md",
+    "version": 2,
+    "reviewStatus": "draft",
+    "minutes": 45,
+    "objectives": [
+      "理解为什么一次高分不足以支持稳定有效的结论。",
+      "能完成本页算例，并解释方法的适用条件与常见误区。"
+    ],
+    "demo": null,
+    "round": 1,
+    "available": true,
+    "backlinks": [
+      "task-tracking",
+      "research-ablation"
+    ]
+  },
+  {
+    "id": "ml-problem",
+    "title": "机器学习在学什么：任务、数据与参数",
+    "stage": "ml",
+    "summary": "区分监督学习中的输入、标签、模型与预测。",
+    "prerequisites": [
+      "math-vectors"
+    ],
+    "related": [
+      "ml-linear",
+      "ml-split"
+    ],
+    "sources": [
+      "d2l-linear",
+      "cs231n"
+    ],
+    "tags": [
+      "监督学习",
+      "特征",
+      "标签",
+      "分类",
+      "回归"
+    ],
+    "path": "content/ml-problem.md",
+    "version": 1,
+    "reviewStatus": "draft",
+    "minutes": 35,
+    "objectives": [
+      "能为简单问题定义输入和目标",
+      "能区分分类、回归及训练与推理"
+    ],
+    "demo": null,
+    "round": 1,
+    "available": true,
+    "backlinks": [
+      "ml-split",
+      "ml-linear",
+      "ml-trees",
+      "ml-unsupervised",
+      "rl-mdp"
+    ]
+  },
+  {
+    "id": "ml-split",
+    "title": "训练、验证与测试：给模型一次公平考试",
+    "stage": "ml",
+    "summary": "理解数据划分、泄漏、分组和真实泛化。",
+    "prerequisites": [
+      "ml-problem",
+      "math-probability"
+    ],
+    "related": [
+      "ml-metrics",
+      "research-reproduce"
+    ],
+    "sources": [
+      "sklearn-split"
+    ],
+    "tags": [
+      "数据划分",
+      "泄漏",
+      "验证集",
+      "测试集",
+      "泛化"
+    ],
+    "path": "content/ml-split.md",
+    "version": 1,
+    "reviewStatus": "draft",
+    "minutes": 45,
+    "objectives": [
+      "能解释三个数据子集各自的用途",
+      "能识别相邻视频帧造成的数据泄漏"
+    ],
+    "demo": null,
+    "round": 1,
+    "available": true,
+    "backlinks": [
+      "ml-metrics",
+      "ml-overfit",
+      "ml-knn",
+      "ml-trees",
+      "dl-dataloader",
+      "cv-augmentation",
+      "research-read",
+      "research-reproduce"
+    ]
+  },
+  {
+    "id": "ml-linear",
+    "title": "线性模型：让一条直线解释数据",
+    "stage": "ml",
+    "summary": "认识权重与偏置，并手动比较两组预测参数。",
+    "prerequisites": [
+      "math-dot",
+      "math-functions",
+      "ml-problem"
+    ],
+    "related": [
+      "dl-neuron"
+    ],
+    "sources": [
+      "d2l-linear"
+    ],
+    "tags": [
+      "线性回归",
+      "权重",
+      "偏置",
+      "预测"
+    ],
+    "path": "content/ml-linear.md",
+    "version": 1,
+    "reviewStatus": "draft",
+    "minutes": 40,
+    "objectives": [
+      "能用 y_hat = wx + b 进行预测",
+      "能解释多特征线性模型中的点积"
+    ],
+    "demo": null,
+    "implementation": "torch_ml.py",
+    "round": 1,
+    "available": true,
+    "backlinks": [
+      "ml-loss",
+      "ml-logistic"
+    ]
+  },
+  {
+    "id": "ml-loss",
+    "title": "损失函数：把预测错误变成可比较的数",
+    "stage": "ml",
+    "summary": "从残差到均方误差，分清训练目标与评估指标。",
+    "prerequisites": [
+      "ml-linear",
+      "math-probability"
+    ],
+    "related": [
+      "ml-metrics",
+      "dl-softmax"
+    ],
+    "sources": [
+      "d2l-linear"
+    ],
+    "tags": [
+      "损失",
+      "MSE",
+      "均方误差",
+      "残差"
+    ],
+    "path": "content/ml-loss.md",
+    "version": 1,
+    "reviewStatus": "draft",
+    "minutes": 40,
+    "objectives": [
+      "能手算均方误差",
+      "能区分优化损失与任务指标"
+    ],
+    "demo": null,
+    "implementation": "torch_ml.py",
+    "round": 1,
+    "available": true,
+    "backlinks": [
+      "ml-gradient",
+      "ml-overfit",
+      "ml-logistic",
+      "dl-softmax",
+      "task-restoration"
+    ]
+  },
+  {
+    "id": "ml-gradient",
+    "title": "梯度下降：让参数朝误差更小的方向走",
+    "stage": "ml",
+    "summary": "连接导数、损失与更新规则，亲手训练一个极小模型。",
+    "prerequisites": [
+      "ml-loss",
+      "math-derivative"
+    ],
+    "related": [
+      "dl-backprop",
+      "dl-optimizers"
+    ],
+    "sources": [
+      "d2l-linear",
+      "d2l-calculus"
+    ],
+    "tags": [
+      "梯度下降",
+      "学习率",
+      "优化",
+      "训练"
+    ],
+    "path": "content/ml-gradient.md",
+    "version": 1,
+    "reviewStatus": "draft",
+    "minutes": 60,
+    "objectives": [
+      "能执行一次梯度下降更新",
+      "能解释学习率过大导致振荡或发散"
+    ],
+    "demo": "gradient",
+    "implementation": "torch_ml.py",
+    "round": 1,
+    "available": true,
+    "backlinks": [
+      "dl-neuron",
+      "dl-optimizers"
+    ]
+  },
+  {
+    "id": "ml-metrics",
+    "title": "混淆矩阵、阈值与分类指标",
+    "stage": "ml",
+    "summary": "依据漏检与误报代价选择指标，而不是只盯着准确率。",
+    "prerequisites": [
+      "ml-split"
+    ],
+    "related": [],
+    "sources": [
+      "sklearn-metrics"
+    ],
+    "tags": [],
+    "path": "content/ml-metrics.md",
+    "version": 2,
+    "reviewStatus": "draft",
+    "minutes": 45,
+    "objectives": [
+      "依据漏检与误报代价选择指标，而不是只盯着准确率。",
+      "能完成本页算例，并解释方法的适用条件与常见误区。"
+    ],
+    "demo": "threshold",
+    "implementation": "torch_ml.py",
+    "round": 1,
+    "available": true,
+    "backlinks": [
+      "task-classification",
+      "task-detection"
+    ]
+  },
+  {
+    "id": "ml-overfit",
+    "title": "过拟合、欠拟合与正则化",
+    "stage": "ml",
+    "summary": "通过学习曲线辨别容量、优化与数据问题。",
+    "prerequisites": [
+      "ml-loss",
+      "ml-split"
+    ],
+    "related": [],
+    "sources": [
+      "d2l-mlp",
+      "sklearn-split"
+    ],
+    "tags": [],
+    "path": "content/ml-overfit.md",
+    "version": 2,
+    "reviewStatus": "draft",
+    "minutes": 45,
+    "objectives": [
+      "通过学习曲线辨别容量、优化与数据问题。",
+      "能完成本页算例，并解释方法的适用条件与常见误区。"
+    ],
+    "demo": null,
+    "implementation": "torch_ml.py",
+    "round": 1,
+    "available": true,
+    "backlinks": [
+      "dl-regularization",
+      "cv-transfer"
+    ]
+  },
+  {
+    "id": "ml-knn",
+    "title": "k 近邻与距离度量",
+    "stage": "ml",
+    "summary": "构建一个不靠梯度训练的分类基线。",
+    "prerequisites": [
+      "math-dot",
+      "ml-split"
+    ],
+    "related": [
+      "ml-unsupervised"
+    ],
+    "sources": [
+      "sklearn-split",
+      "d2l-algebra"
+    ],
+    "tags": [],
+    "path": "content/ml-knn.md",
+    "version": 2,
+    "reviewStatus": "draft",
+    "minutes": 45,
+    "objectives": [
+      "构建一个不靠梯度训练的分类基线。",
+      "能完成本页算例，并解释方法的适用条件与常见误区。"
+    ],
+    "demo": null,
+    "implementation": "torch_ml.py",
+    "round": 1,
+    "available": true,
+    "backlinks": []
+  },
+  {
+    "id": "ml-trees",
+    "title": "决策树、随机森林与提升",
+    "stage": "ml",
+    "summary": "认识基于分裂的非线性模型，建立神经网络之外的基线。",
+    "prerequisites": [
+      "ml-problem",
+      "ml-split"
+    ],
+    "related": [
+      "ml-overfit"
+    ],
+    "sources": [
+      "sklearn-trees"
+    ],
+    "tags": [],
+    "path": "content/ml-trees.md",
+    "version": 2,
+    "reviewStatus": "draft",
+    "minutes": 45,
+    "objectives": [
+      "认识基于分裂的非线性模型，建立神经网络之外的基线。",
+      "能完成本页算例，并解释方法的适用条件与常见误区。"
+    ],
+    "demo": null,
+    "round": 1,
+    "available": true,
+    "backlinks": []
+  },
+  {
+    "id": "ml-logistic",
+    "title": "逻辑回归与二分类损失",
+    "stage": "ml",
+    "summary": "把线性分数转换成二分类概率模型，并用稳定的损失训练。",
+    "prerequisites": [
+      "ml-linear",
+      "math-probability",
+      "ml-loss"
+    ],
+    "related": [
+      "dl-softmax",
+      "ml-metrics"
+    ],
+    "sources": [
+      "torch-optim",
+      "sklearn-metrics"
+    ],
+    "tags": [],
+    "path": "content/ml-logistic.md",
+    "version": 2,
+    "reviewStatus": "draft",
+    "minutes": 45,
+    "objectives": [
+      "把线性分数转换成二分类概率模型，并用稳定的损失训练。",
+      "能完成本页算例，并解释方法的适用条件与常见误区。"
+    ],
+    "demo": null,
+    "implementation": "torch_ml.py",
+    "round": 1,
+    "available": true,
+    "backlinks": []
+  },
+  {
+    "id": "ml-unsupervised",
+    "title": "K-means 与 PCA：发现无标签结构",
+    "stage": "ml",
+    "summary": "区分聚类与降维，并理解它们优化什么。",
+    "prerequisites": [
+      "math-matmul",
+      "ml-problem"
+    ],
+    "related": [],
+    "sources": [
+      "sklearn-clusters",
+      "sklearn-pca"
+    ],
+    "tags": [],
+    "path": "content/ml-unsupervised.md",
+    "version": 2,
+    "reviewStatus": "draft",
+    "minutes": 45,
+    "objectives": [
+      "区分聚类与降维，并理解它们优化什么。",
+      "能完成本页算例，并解释方法的适用条件与常见误区。"
+    ],
+    "demo": null,
+    "implementation": "torch_ml.py",
+    "round": 1,
+    "available": true,
+    "backlinks": []
+  },
+  {
+    "id": "dl-neuron",
+    "title": "神经元与非线性：从直线走向网络",
+    "stage": "dl",
+    "summary": "理解加权求和、偏置、ReLU 与隐藏层的作用。",
+    "prerequisites": [
+      "ml-gradient",
+      "math-dot"
+    ],
+    "related": [
+      "dl-backprop",
+      "dl-mlp",
+      "cv-convolution"
+    ],
+    "sources": [
+      "d2l-mlp"
+    ],
+    "tags": [
+      "神经网络",
+      "ReLU",
+      "激活函数",
+      "隐藏层"
+    ],
+    "path": "content/dl-neuron.md",
+    "version": 1,
+    "reviewStatus": "draft",
+    "minutes": 45,
+    "objectives": [
+      "能手算一个带 ReLU 的神经元",
+      "能解释为什么网络需要非线性"
+    ],
+    "demo": null,
+    "implementation": "torch_foundations.py",
+    "round": 2,
+    "available": true,
+    "backlinks": [
+      "dl-backprop",
+      "dl-mlp",
+      "dl-softmax",
+      "cv-convolution"
+    ]
+  },
+  {
+    "id": "torch-tensors",
+    "title": "PyTorch 张量、形状与设备",
+    "stage": "dl",
+    "summary": "把数学运算落实到张量，掌握dtype、广播和设备一致性。",
+    "prerequisites": [
+      "math-vectors",
+      "math-matmul"
+    ],
+    "related": [
+      "math-matmul",
+      "cv-convolution"
+    ],
+    "sources": [
+      "torch-basics"
+    ],
+    "tags": [],
+    "path": "content/torch-tensors.md",
+    "version": 2,
+    "reviewStatus": "draft",
+    "minutes": 45,
+    "objectives": [
+      "把数学运算落实到张量，掌握dtype、广播和设备一致性。",
+      "能完成本页算例，并解释方法的适用条件与常见误区。"
+    ],
+    "demo": null,
+    "implementation": "torch_foundations.py",
+    "round": 2,
+    "available": true,
+    "backlinks": [
+      "dl-backprop",
+      "dl-mlp",
+      "dl-dataloader"
+    ]
+  },
+  {
+    "id": "dl-backprop",
+    "title": "自动微分与反向传播",
+    "stage": "dl",
+    "summary": "连接计算图、叶子参数和梯度累积，正确完成一次更新。",
+    "prerequisites": [
+      "math-chain",
+      "dl-neuron",
+      "torch-tensors"
+    ],
+    "related": [],
+    "sources": [
+      "torch-basics",
+      "torch-optim"
+    ],
+    "tags": [],
+    "path": "content/dl-backprop.md",
+    "version": 2,
+    "reviewStatus": "draft",
+    "minutes": 45,
+    "objectives": [
+      "连接计算图、叶子参数和梯度累积，正确完成一次更新。",
+      "能完成本页算例，并解释方法的适用条件与常见误区。"
+    ],
+    "demo": null,
+    "implementation": "torch_foundations.py",
+    "round": 2,
+    "available": true,
+    "backlinks": [
+      "dl-optimizers",
+      "dl-training",
+      "rl-policy"
+    ]
+  },
+  {
+    "id": "dl-mlp",
+    "title": "多层感知机与表达能力",
+    "stage": "dl",
+    "summary": "把线性层和激活组成可训练的非线性函数。",
+    "prerequisites": [
+      "math-matmul",
+      "dl-neuron",
+      "torch-tensors"
+    ],
+    "related": [],
+    "sources": [
+      "d2l-mlp",
+      "torch-basics"
+    ],
+    "tags": [],
+    "path": "content/dl-mlp.md",
+    "version": 2,
+    "reviewStatus": "draft",
+    "minutes": 45,
+    "objectives": [
+      "把线性层和激活组成可训练的非线性函数。",
+      "能完成本页算例，并解释方法的适用条件与常见误区。"
+    ],
+    "demo": null,
+    "implementation": "torch_foundations.py",
+    "round": 2,
+    "available": true,
+    "backlinks": []
+  },
+  {
+    "id": "dl-softmax",
+    "title": "Softmax、交叉熵与 logits",
+    "stage": "dl",
+    "summary": "区分模型分数、概率分布和分类目标。",
+    "prerequisites": [
+      "math-probability",
+      "ml-loss",
+      "dl-neuron"
+    ],
+    "related": [],
+    "sources": [
+      "torch-optim"
+    ],
+    "tags": [],
+    "path": "content/dl-softmax.md",
+    "version": 2,
+    "reviewStatus": "draft",
+    "minutes": 45,
+    "objectives": [
+      "区分模型分数、概率分布和分类目标。",
+      "能完成本页算例，并解释方法的适用条件与常见误区。"
+    ],
+    "demo": null,
+    "implementation": "torch_foundations.py",
+    "round": 2,
+    "available": true,
+    "backlinks": [
+      "dl-training",
+      "rl-policy",
+      "modern-attention",
+      "modern-selfsupervised"
+    ]
+  },
+  {
+    "id": "dl-optimizers",
+    "title": "SGD、动量与 Adam",
+    "stage": "dl",
+    "summary": "比较参数更新规则，明确学习率和状态的作用。",
+    "prerequisites": [
+      "ml-gradient",
+      "dl-backprop"
+    ],
+    "related": [],
+    "sources": [
+      "torch-optim"
+    ],
+    "tags": [],
+    "path": "content/dl-optimizers.md",
+    "version": 2,
+    "reviewStatus": "draft",
+    "minutes": 45,
+    "objectives": [
+      "比较参数更新规则，明确学习率和状态的作用。",
+      "能完成本页算例，并解释方法的适用条件与常见误区。"
+    ],
+    "demo": null,
+    "implementation": "torch_foundations.py",
+    "round": 2,
+    "available": true,
+    "backlinks": []
+  },
+  {
+    "id": "dl-dataloader",
+    "title": "Dataset、DataLoader 与批次",
+    "stage": "dl",
+    "summary": "建立可追踪的数据到模型的管道。",
+    "prerequisites": [
+      "torch-tensors",
+      "ml-split"
+    ],
+    "related": [],
+    "sources": [
+      "torch-basics"
+    ],
+    "tags": [],
+    "path": "content/dl-dataloader.md",
+    "version": 2,
+    "reviewStatus": "draft",
+    "minutes": 45,
+    "objectives": [
+      "建立可追踪的数据到模型的管道。",
+      "能完成本页算例，并解释方法的适用条件与常见误区。"
+    ],
+    "demo": null,
+    "implementation": "torch_foundations.py",
+    "round": 2,
+    "available": true,
+    "backlinks": [
+      "dl-training",
+      "cv-augmentation"
+    ]
+  },
+  {
+    "id": "dl-training",
+    "title": "完整训练、验证与模型保存",
+    "stage": "dl",
+    "summary": "运行一个可复现的分类流程，分清每一行代码的职责。",
+    "prerequisites": [
+      "dl-backprop",
+      "dl-dataloader",
+      "dl-softmax"
+    ],
+    "related": [],
+    "sources": [
+      "torch-optim"
+    ],
+    "tags": [],
+    "path": "content/dl-training.md",
+    "version": 2,
+    "reviewStatus": "draft",
+    "minutes": 45,
+    "objectives": [
+      "运行一个可复现的分类流程，分清每一行代码的职责。",
+      "能完成本页算例，并解释方法的适用条件与常见误区。"
+    ],
+    "demo": null,
+    "implementation": "torch_foundations.py",
+    "round": 2,
+    "available": true,
+    "backlinks": [
+      "dl-regularization",
+      "rl-dqn",
+      "cv-lenet",
+      "modern-diffusion",
+      "research-reproduce"
+    ]
+  },
+  {
+    "id": "dl-regularization",
+    "title": "Dropout、归一化与训练模式",
+    "stage": "dl",
+    "summary": "解释相同输入在训练与评估时为什么可能有不同输出。",
+    "prerequisites": [
+      "ml-overfit",
+      "dl-training"
+    ],
+    "related": [],
+    "sources": [
+      "d2l-mlp",
+      "torch-basics"
+    ],
+    "tags": [],
+    "path": "content/dl-regularization.md",
+    "version": 2,
+    "reviewStatus": "draft",
+    "minutes": 45,
+    "objectives": [
+      "解释相同输入在训练与评估时为什么可能有不同输出。",
+      "能完成本页算例，并解释方法的适用条件与常见误区。"
+    ],
+    "demo": null,
+    "implementation": "torch_foundations.py",
+    "round": 2,
+    "available": true,
+    "backlinks": [
+      "cv-resnet",
+      "modern-transformer"
+    ]
+  },
+  {
+    "id": "rl-mdp",
+    "related": [],
+    "tags": [],
+    "title": "从监督学习到强化学习：MDP",
+    "stage": "rl",
+    "summary": "用状态、动作、奖励和转移定义一个序贯决策任务。",
+    "prerequisites": [
+      "ml-problem",
+      "math-probability"
+    ],
+    "sources": [
+      "spin-intro"
+    ],
+    "path": "content/rl-mdp.md",
+    "version": 1,
+    "reviewStatus": "draft",
+    "minutes": 45,
+    "objectives": [
+      "用状态、动作、奖励和转移定义一个序贯决策任务。",
+      "能完成本页算例，并解释方法的适用条件与常见误区。"
+    ],
+    "demo": null,
+    "implementation": "q_learning.py",
+    "round": 3,
+    "available": true,
+    "backlinks": [
+      "rl-return"
+    ]
+  },
+  {
+    "id": "rl-return",
+    "related": [],
+    "tags": [],
+    "title": "折扣回报与奖励设计",
+    "stage": "rl",
+    "summary": "把短期奖励与长期目标放进同一个明确的目标函数。",
+    "prerequisites": [
+      "rl-mdp"
+    ],
+    "sources": [
+      "spin-intro"
+    ],
+    "path": "content/rl-return.md",
+    "version": 1,
+    "reviewStatus": "draft",
+    "minutes": 45,
+    "objectives": [
+      "把短期奖励与长期目标放进同一个明确的目标函数。",
+      "能完成本页算例，并解释方法的适用条件与常见误区。"
+    ],
+    "demo": "return",
+    "round": 3,
+    "available": true,
+    "backlinks": [
+      "rl-value",
+      "rl-policy"
+    ]
+  },
+  {
+    "id": "rl-value",
+    "related": [],
+    "tags": [],
+    "title": "V、Q 与 Bellman 备份",
+    "stage": "rl",
+    "summary": "区分状态价值和动作价值，理解一步反馈如何连接长期回报。",
+    "prerequisites": [
+      "rl-return"
+    ],
+    "sources": [
+      "spin-intro"
+    ],
+    "path": "content/rl-value.md",
+    "version": 1,
+    "reviewStatus": "draft",
+    "minutes": 45,
+    "objectives": [
+      "区分状态价值和动作价值，理解一步反馈如何连接长期回报。",
+      "能完成本页算例，并解释方法的适用条件与常见误区。"
+    ],
+    "demo": null,
+    "implementation": "q_learning.py",
+    "round": 3,
+    "available": true,
+    "backlinks": [
+      "rl-exploration",
+      "rl-ppo"
+    ]
+  },
+  {
+    "id": "rl-exploration",
+    "related": [],
+    "tags": [],
+    "title": "探索、利用与 ε-greedy",
+    "stage": "rl",
+    "summary": "理解为什么只选当前最好动作可能错过真正好策略。",
+    "prerequisites": [
+      "rl-value"
+    ],
+    "sources": [
+      "spin-intro",
+      "torch-dqn"
+    ],
+    "path": "content/rl-exploration.md",
+    "version": 1,
+    "reviewStatus": "draft",
+    "minutes": 45,
+    "objectives": [
+      "理解为什么只选当前最好动作可能错过真正好策略。",
+      "能完成本页算例，并解释方法的适用条件与常见误区。"
+    ],
+    "demo": null,
+    "implementation": "q_learning.py",
+    "round": 3,
+    "available": true,
+    "backlinks": [
+      "rl-qlearning"
+    ]
+  },
+  {
+    "id": "rl-qlearning",
+    "related": [],
+    "tags": [],
+    "title": "Q-learning 与 SARSA",
+    "stage": "rl",
+    "summary": "手算TD更新，分清行为策略与更新目标。",
+    "prerequisites": [
+      "rl-exploration"
+    ],
+    "sources": [
+      "sutton-barto",
+      "torch-dqn"
+    ],
+    "path": "content/rl-qlearning.md",
+    "version": 1,
+    "reviewStatus": "draft",
+    "minutes": 45,
+    "objectives": [
+      "手算TD更新，分清行为策略与更新目标。",
+      "能完成本页算例，并解释方法的适用条件与常见误区。"
+    ],
+    "demo": "qlearning",
+    "implementation": "q_learning.py",
+    "round": 3,
+    "available": true,
+    "backlinks": [
+      "rl-dqn"
+    ]
+  },
+  {
+    "id": "rl-dqn",
+    "related": [
+      "rl-policy",
+      "cv-convolution"
+    ],
+    "tags": [],
+    "title": "DQN：用神经网络近似 Q",
+    "stage": "rl",
+    "summary": "把表格值替换成网络，并理解经验回放与目标网络为何存在。",
+    "prerequisites": [
+      "rl-qlearning",
+      "dl-training"
+    ],
+    "sources": [
+      "torch-dqn"
+    ],
+    "path": "content/rl-dqn.md",
+    "version": 1,
+    "reviewStatus": "draft",
+    "minutes": 45,
+    "objectives": [
+      "把表格值替换成网络，并理解经验回放与目标网络为何存在。",
+      "能完成本页算例，并解释方法的适用条件与常见误区。"
+    ],
+    "demo": null,
+    "implementation": "dqn_torch.py",
+    "round": 3,
+    "available": true,
+    "backlinks": []
+  },
+  {
+    "id": "rl-policy",
+    "related": [
+      "rl-dqn",
+      "dl-softmax"
+    ],
+    "tags": [],
+    "title": "策略梯度与 REINFORCE",
+    "stage": "rl",
+    "summary": "直接学习动作分布，理解 log_prob 与回报的乘积。",
+    "prerequisites": [
+      "rl-return",
+      "dl-backprop",
+      "dl-softmax"
+    ],
+    "sources": [
+      "spin-intro",
+      "spin-ppo"
+    ],
+    "path": "content/rl-policy.md",
+    "version": 1,
+    "reviewStatus": "draft",
+    "minutes": 45,
+    "objectives": [
+      "直接学习动作分布，理解 log_prob 与回报的乘积。",
+      "能完成本页算例，并解释方法的适用条件与常见误区。"
+    ],
+    "demo": null,
+    "implementation": "policy_torch.py",
+    "round": 3,
+    "available": true,
+    "backlinks": [
+      "rl-ppo"
+    ]
+  },
+  {
+    "id": "rl-ppo",
+    "related": [
+      "dl-optimizers",
+      "rl-exploration"
+    ],
+    "tags": [],
+    "title": "Actor-Critic、优势与 PPO-Clip",
+    "stage": "rl",
+    "summary": "理解价值基线与受约束更新的动机，读懂 PPO 的核心目标。",
+    "prerequisites": [
+      "rl-policy",
+      "rl-value"
+    ],
+    "sources": [
+      "spin-ppo"
+    ],
+    "path": "content/rl-ppo.md",
+    "version": 1,
+    "reviewStatus": "draft",
+    "minutes": 45,
+    "objectives": [
+      "理解价值基线与受约束更新的动机，读懂 PPO 的核心目标。",
+      "能完成本页算例，并解释方法的适用条件与常见误区。"
+    ],
+    "demo": null,
+    "implementation": "policy_torch.py",
+    "round": 3,
+    "available": true,
+    "backlinks": []
+  },
+  {
+    "id": "cv-convolution",
+    "title": "卷积：用一个小窗口读懂图像",
+    "stage": "vision",
+    "summary": "滑动 3×3 窗口，观察局部加权求和如何形成特征图。",
+    "prerequisites": [
+      "dl-neuron",
+      "math-vectors"
+    ],
+    "related": [
+      "cv-padding",
+      "cv-channels",
+      "cv-pooling"
+    ],
+    "sources": [
+      "d2l-conv"
+    ],
+    "tags": [
+      "CNN",
+      "卷积",
+      "互相关",
+      "卷积核",
+      "特征图"
+    ],
+    "path": "content/cv-convolution.md",
+    "version": 1,
+    "reviewStatus": "draft",
+    "minutes": 50,
+    "objectives": [
+      "能计算一个 3×3 局部窗口的输出",
+      "能解释步长 1、无填充时输出尺寸的变化"
+    ],
+    "demo": "convolution",
+    "implementation": "torch_foundations.py",
+    "round": 2,
+    "available": true,
+    "backlinks": [
+      "cv-padding",
+      "cv-channels"
+    ]
+  },
+  {
+    "id": "cv-padding",
+    "title": "步长、填充与输出尺寸",
+    "stage": "vision",
+    "summary": "精确追踪特征图分辨率与边界处理。",
+    "prerequisites": [
+      "cv-convolution"
+    ],
+    "related": [],
+    "sources": [
+      "torch-conv"
+    ],
+    "tags": [],
+    "path": "content/cv-padding.md",
+    "version": 1,
+    "reviewStatus": "draft",
+    "minutes": 30,
+    "objectives": [
+      "精确追踪特征图分辨率与边界处理。",
+      "完成先修概念检查后，再进入实现和论文阅读。"
+    ],
+    "implementation": "cnn_basics.py",
+    "round": 2,
+    "available": true,
+    "backlinks": [
+      "cv-pooling",
+      "task-segmentation"
+    ]
+  },
+  {
+    "id": "cv-channels",
+    "title": "多通道卷积与参数量",
+    "stage": "vision",
+    "summary": "理解输入通道求和、输出通道和卷积权重形状。",
+    "prerequisites": [
+      "cv-convolution",
+      "math-matmul"
+    ],
+    "related": [],
+    "sources": [
+      "torch-conv"
+    ],
+    "tags": [],
+    "path": "content/cv-channels.md",
+    "version": 1,
+    "reviewStatus": "draft",
+    "minutes": 30,
+    "objectives": [
+      "理解输入通道求和、输出通道和卷积权重形状。",
+      "完成先修概念检查后，再进入实现和论文阅读。"
+    ],
+    "implementation": "cnn_basics.py",
+    "round": 2,
+    "available": true,
+    "backlinks": [
+      "cv-lenet"
+    ]
+  },
+  {
+    "id": "cv-pooling",
+    "title": "池化与感受野",
+    "stage": "vision",
+    "summary": "理解下采样、信息损失和有效观察范围。",
+    "prerequisites": [
+      "cv-padding"
+    ],
+    "related": [],
+    "sources": [
+      "d2l-pooling"
+    ],
+    "tags": [],
+    "path": "content/cv-pooling.md",
+    "version": 1,
+    "reviewStatus": "draft",
+    "minutes": 30,
+    "objectives": [
+      "理解下采样、信息损失和有效观察范围。",
+      "完成先修概念检查后，再进入实现和论文阅读。"
+    ],
+    "implementation": "cnn_basics.py",
+    "round": 2,
+    "available": true,
+    "backlinks": [
+      "cv-lenet"
+    ]
+  },
+  {
+    "id": "cv-augmentation",
+    "title": "图像预处理与数据增强",
+    "stage": "vision",
+    "summary": "匹配训练/验证流程，避免破坏标签语义。",
+    "prerequisites": [
+      "ml-split",
+      "dl-dataloader"
+    ],
+    "related": [],
+    "sources": [
+      "torch-transfer"
+    ],
+    "tags": [],
+    "path": "content/cv-augmentation.md",
+    "version": 1,
+    "reviewStatus": "draft",
+    "minutes": 30,
+    "objectives": [
+      "匹配训练/验证流程，避免破坏标签语义。",
+      "完成先修概念检查后，再进入实现和论文阅读。"
+    ],
+    "implementation": "cnn_basics.py",
+    "round": 2,
+    "available": true,
+    "backlinks": []
+  },
+  {
+    "id": "cv-lenet",
+    "title": "从 LeNet 到小型 CNN",
+    "stage": "vision",
+    "summary": "把卷积、非线性与分类头组合成可训练模型。",
+    "prerequisites": [
+      "cv-channels",
+      "cv-pooling",
+      "dl-training"
+    ],
+    "related": [],
+    "sources": [
+      "torch-optim"
+    ],
+    "tags": [],
+    "path": "content/cv-lenet.md",
+    "version": 1,
+    "reviewStatus": "draft",
+    "minutes": 30,
+    "objectives": [
+      "把卷积、非线性与分类头组合成可训练模型。",
+      "完成先修概念检查后，再进入实现和论文阅读。"
+    ],
+    "implementation": "cnn_basics.py",
+    "round": 2,
+    "available": true,
+    "backlinks": [
+      "cv-resnet",
+      "task-restoration"
+    ]
+  },
+  {
+    "id": "cv-resnet",
+    "title": "残差连接与 ResNet",
+    "stage": "vision",
+    "summary": "理解残差分支、维度匹配和深层网络优化。",
+    "prerequisites": [
+      "cv-lenet",
+      "dl-regularization"
+    ],
+    "related": [],
+    "sources": [
+      "d2l-resnet"
+    ],
+    "tags": [],
+    "path": "content/cv-resnet.md",
+    "version": 1,
+    "reviewStatus": "draft",
+    "minutes": 30,
+    "objectives": [
+      "理解残差分支、维度匹配和深层网络优化。",
+      "完成先修概念检查后，再进入实现和论文阅读。"
+    ],
+    "implementation": "cnn_basics.py",
+    "round": 2,
+    "available": true,
+    "backlinks": [
+      "cv-transfer",
+      "task-detection",
+      "task-segmentation",
+      "modern-transformer"
+    ]
+  },
+  {
+    "id": "cv-transfer",
+    "title": "迁移学习与微调",
+    "stage": "vision",
+    "summary": "设置冻结层、学习率与训练/验证协议。",
+    "prerequisites": [
+      "cv-resnet",
+      "ml-overfit"
+    ],
+    "related": [],
+    "sources": [
+      "torch-transfer"
+    ],
+    "tags": [],
+    "path": "content/cv-transfer.md",
+    "version": 1,
+    "reviewStatus": "draft",
+    "minutes": 30,
+    "objectives": [
+      "设置冻结层、学习率与训练/验证协议。",
+      "完成先修概念检查后，再进入实现和论文阅读。"
+    ],
+    "implementation": "cnn_basics.py",
+    "round": 2,
+    "available": true,
+    "backlinks": [
+      "task-classification",
+      "modern-vit",
+      "modern-selfsupervised"
+    ]
+  },
+  {
+    "id": "task-classification",
+    "title": "图像分类实践",
+    "stage": "tasks",
+    "summary": "训练并评估一个可复现的分类基线。",
+    "prerequisites": [
+      "cv-transfer",
+      "ml-metrics"
+    ],
+    "related": [],
+    "sources": [],
+    "tags": [],
+    "path": null,
+    "version": 1,
+    "reviewStatus": "outline",
+    "minutes": 0,
+    "objectives": [
+      "训练并评估一个可复现的分类基线。",
+      "完成先修概念检查后，再进入实现和论文阅读。"
+    ],
+    "round": 3,
+    "available": false,
+    "backlinks": [
+      "research-read"
+    ]
+  },
+  {
+    "id": "task-detection",
+    "title": "目标检测与边界框",
+    "stage": "tasks",
+    "summary": "理解类别、坐标、IoU、NMS 和检测评估。",
+    "prerequisites": [
+      "cv-resnet",
+      "ml-metrics"
+    ],
+    "related": [],
+    "sources": [],
+    "tags": [],
+    "path": null,
+    "version": 1,
+    "reviewStatus": "outline",
+    "minutes": 0,
+    "objectives": [
+      "理解类别、坐标、IoU、NMS 和检测评估。",
+      "完成先修概念检查后，再进入实现和论文阅读。"
+    ],
+    "round": 3,
+    "available": false,
+    "backlinks": [
+      "task-yolo",
+      "task-tracking",
+      "research-underwater"
+    ]
+  },
+  {
+    "id": "task-yolo",
+    "title": "单阶段检测与 YOLO 思路",
+    "stage": "tasks",
+    "summary": "理解稠密预测和不同版本架构的差别。",
+    "prerequisites": [
+      "task-detection"
+    ],
+    "related": [],
+    "sources": [],
+    "tags": [],
+    "path": null,
+    "version": 1,
+    "reviewStatus": "outline",
+    "minutes": 0,
+    "objectives": [
+      "理解稠密预测和不同版本架构的差别。",
+      "完成先修概念检查后，再进入实现和论文阅读。"
+    ],
+    "round": 3,
+    "available": false,
+    "backlinks": []
+  },
+  {
+    "id": "task-segmentation",
+    "title": "语义与实例分割",
+    "stage": "tasks",
+    "summary": "区分像素类别与实例身份，认识 U-Net 等结构。",
+    "prerequisites": [
+      "cv-resnet",
+      "cv-padding"
+    ],
+    "related": [],
+    "sources": [],
+    "tags": [],
+    "path": null,
+    "version": 1,
+    "reviewStatus": "outline",
+    "minutes": 0,
+    "objectives": [
+      "区分像素类别与实例身份，认识 U-Net 等结构。",
+      "完成先修概念检查后，再进入实现和论文阅读。"
+    ],
+    "round": 3,
+    "available": false,
+    "backlinks": []
+  },
+  {
+    "id": "task-tracking",
+    "title": "多目标跟踪与计数",
+    "stage": "tasks",
+    "summary": "连接逐帧检测、关联、轨迹与计数定义。",
+    "prerequisites": [
+      "task-detection",
+      "math-statistics"
+    ],
+    "related": [],
+    "sources": [],
+    "tags": [],
+    "path": null,
+    "version": 1,
+    "reviewStatus": "outline",
+    "minutes": 0,
+    "objectives": [
+      "连接逐帧检测、关联、轨迹与计数定义。",
+      "完成先修概念检查后，再进入实现和论文阅读。"
+    ],
+    "round": 3,
+    "available": false,
+    "backlinks": []
+  },
+  {
+    "id": "task-restoration",
+    "title": "图像复原与质量评估",
+    "stage": "tasks",
+    "summary": "理解去噪、增强、重建目标与评价边界。",
+    "prerequisites": [
+      "cv-lenet",
+      "ml-loss"
+    ],
+    "related": [],
+    "sources": [],
+    "tags": [],
+    "path": null,
+    "version": 1,
+    "reviewStatus": "outline",
+    "minutes": 0,
+    "objectives": [
+      "理解去噪、增强、重建目标与评价边界。",
+      "完成先修概念检查后，再进入实现和论文阅读。"
+    ],
+    "round": 3,
+    "available": false,
+    "backlinks": [
+      "modern-diffusion",
+      "research-underwater"
+    ]
+  },
+  {
+    "id": "modern-attention",
+    "title": "注意力与 Q、K、V",
+    "stage": "modern",
+    "summary": "从点积与加权求和理解注意力。",
+    "prerequisites": [
+      "math-matmul",
+      "dl-softmax"
+    ],
+    "related": [],
+    "sources": [],
+    "tags": [],
+    "path": null,
+    "version": 1,
+    "reviewStatus": "outline",
+    "minutes": 0,
+    "objectives": [
+      "从点积与加权求和理解注意力。",
+      "完成先修概念检查后，再进入实现和论文阅读。"
+    ],
+    "round": 3,
+    "available": false,
+    "backlinks": [
+      "modern-transformer"
+    ]
+  },
+  {
+    "id": "modern-transformer",
+    "title": "Transformer 模块",
+    "stage": "modern",
+    "summary": "组合注意力、前馈网络、归一化与残差。",
+    "prerequisites": [
+      "modern-attention",
+      "cv-resnet",
+      "dl-regularization"
+    ],
+    "related": [],
+    "sources": [],
+    "tags": [],
+    "path": null,
+    "version": 1,
+    "reviewStatus": "outline",
+    "minutes": 0,
+    "objectives": [
+      "组合注意力、前馈网络、归一化与残差。",
+      "完成先修概念检查后，再进入实现和论文阅读。"
+    ],
+    "round": 3,
+    "available": false,
+    "backlinks": [
+      "modern-vit",
+      "modern-clip"
+    ]
+  },
+  {
+    "id": "modern-vit",
+    "title": "视觉 Transformer",
+    "stage": "modern",
+    "summary": "理解图像分块、位置编码和分类表示。",
+    "prerequisites": [
+      "modern-transformer",
+      "cv-transfer"
+    ],
+    "related": [],
+    "sources": [],
+    "tags": [],
+    "path": null,
+    "version": 1,
+    "reviewStatus": "outline",
+    "minutes": 0,
+    "objectives": [
+      "理解图像分块、位置编码和分类表示。",
+      "完成先修概念检查后，再进入实现和论文阅读。"
+    ],
+    "round": 3,
+    "available": false,
+    "backlinks": [
+      "modern-foundation"
+    ]
+  },
+  {
+    "id": "modern-selfsupervised",
+    "title": "对比学习与自监督",
+    "stage": "modern",
+    "summary": "理解预训练目标、正负样本和表示评估。",
+    "prerequisites": [
+      "cv-transfer",
+      "dl-softmax"
+    ],
+    "related": [],
+    "sources": [],
+    "tags": [],
+    "path": null,
+    "version": 1,
+    "reviewStatus": "outline",
+    "minutes": 0,
+    "objectives": [
+      "理解预训练目标、正负样本和表示评估。",
+      "完成先修概念检查后，再进入实现和论文阅读。"
+    ],
+    "round": 3,
+    "available": false,
+    "backlinks": [
+      "modern-clip"
+    ]
+  },
+  {
+    "id": "modern-clip",
+    "title": "CLIP 与视觉语言对齐",
+    "stage": "modern",
+    "summary": "连接图像/文本表示、相似度与零样本分类。",
+    "prerequisites": [
+      "modern-selfsupervised",
+      "modern-transformer"
+    ],
+    "related": [],
+    "sources": [],
+    "tags": [],
+    "path": null,
+    "version": 1,
+    "reviewStatus": "outline",
+    "minutes": 0,
+    "objectives": [
+      "连接图像/文本表示、相似度与零样本分类。",
+      "完成先修概念检查后，再进入实现和论文阅读。"
+    ],
+    "round": 3,
+    "available": false,
+    "backlinks": [
+      "modern-foundation"
+    ]
+  },
+  {
+    "id": "modern-diffusion",
+    "title": "扩散模型基础",
+    "stage": "modern",
+    "summary": "建立加噪、去噪、训练与采样的概念区别。",
+    "prerequisites": [
+      "math-probability",
+      "task-restoration",
+      "dl-training"
+    ],
+    "related": [],
+    "sources": [],
+    "tags": [],
+    "path": null,
+    "version": 1,
+    "reviewStatus": "outline",
+    "minutes": 0,
+    "objectives": [
+      "建立加噪、去噪、训练与采样的概念区别。",
+      "完成先修概念检查后，再进入实现和论文阅读。"
+    ],
+    "round": 3,
+    "available": false,
+    "backlinks": []
+  },
+  {
+    "id": "modern-foundation",
+    "title": "视觉基础模型与适配",
+    "stage": "modern",
+    "summary": "比较预训练能力、提示、微调和领域迁移。",
+    "prerequisites": [
+      "modern-vit",
+      "modern-clip"
+    ],
+    "related": [],
+    "sources": [],
+    "tags": [],
+    "path": null,
+    "version": 1,
+    "reviewStatus": "outline",
+    "minutes": 0,
+    "objectives": [
+      "比较预训练能力、提示、微调和领域迁移。",
+      "完成先修概念检查后，再进入实现和论文阅读。"
+    ],
+    "round": 3,
+    "available": false,
+    "backlinks": []
+  },
+  {
+    "id": "research-read",
+    "title": "读论文：问题、方法与证据",
+    "stage": "research",
+    "summary": "从任务假设、贡献、对照和局限结构化阅读。",
+    "prerequisites": [
+      "task-classification",
+      "ml-split"
+    ],
+    "related": [],
+    "sources": [],
+    "tags": [],
+    "path": null,
+    "version": 1,
+    "reviewStatus": "outline",
+    "minutes": 0,
+    "objectives": [
+      "从任务假设、贡献、对照和局限结构化阅读。",
+      "完成先修概念检查后，再进入实现和论文阅读。"
+    ],
+    "round": 3,
+    "available": false,
+    "backlinks": [
+      "research-ablation",
+      "research-underwater"
+    ]
+  },
+  {
+    "id": "research-reproduce",
+    "title": "复现：版本、数据与随机性",
+    "stage": "research",
+    "summary": "记录环境、数据版本、种子、命令和偏差。",
+    "prerequisites": [
+      "dl-training",
+      "ml-split"
+    ],
+    "related": [],
+    "sources": [],
+    "tags": [],
+    "path": null,
+    "version": 1,
+    "reviewStatus": "outline",
+    "minutes": 0,
+    "objectives": [
+      "记录环境、数据版本、种子、命令和偏差。",
+      "完成先修概念检查后，再进入实现和论文阅读。"
+    ],
+    "round": 3,
+    "available": false,
+    "backlinks": [
+      "research-ablation"
+    ]
+  },
+  {
+    "id": "research-ablation",
+    "title": "基线、消融与公平比较",
+    "stage": "research",
+    "summary": "隔离变量并控制预算，避免挑选最好结果。",
+    "prerequisites": [
+      "research-reproduce",
+      "research-read",
+      "math-statistics"
+    ],
+    "related": [],
+    "sources": [],
+    "tags": [],
+    "path": null,
+    "version": 1,
+    "reviewStatus": "outline",
+    "minutes": 0,
+    "objectives": [
+      "隔离变量并控制预算，避免挑选最好结果。",
+      "完成先修概念检查后，再进入实现和论文阅读。"
+    ],
+    "round": 3,
+    "available": false,
+    "backlinks": [
+      "research-write"
+    ]
+  },
+  {
+    "id": "research-write",
+    "title": "实验记录与证据表达",
+    "stage": "research",
+    "summary": "明确事实、假设、未完成实验和可核验来源。",
+    "prerequisites": [
+      "research-ablation"
+    ],
+    "related": [],
+    "sources": [],
+    "tags": [],
+    "path": null,
+    "version": 1,
+    "reviewStatus": "outline",
+    "minutes": 0,
+    "objectives": [
+      "明确事实、假设、未完成实验和可核验来源。",
+      "完成先修概念检查后，再进入实现和论文阅读。"
+    ],
+    "round": 3,
+    "available": false,
+    "backlinks": []
+  },
+  {
+    "id": "research-underwater",
+    "title": "水下视觉方向入口",
+    "stage": "research",
+    "summary": "梳理退化、域迁移、检测跟踪与数据偏差。",
+    "prerequisites": [
+      "research-read",
+      "task-detection",
+      "task-restoration"
+    ],
+    "related": [],
+    "sources": [],
+    "tags": [],
+    "path": null,
+    "version": 1,
+    "reviewStatus": "outline",
+    "minutes": 0,
+    "objectives": [
+      "梳理退化、域迁移、检测跟踪与数据偏差。",
+      "完成先修概念检查后，再进入实现和论文阅读。"
+    ],
+    "round": 3,
+    "available": false,
+    "backlinks": []
+  }
+]

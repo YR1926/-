@@ -1,0 +1,33 @@
+# Python and development environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+node_modules/
+.pytest_cache/
+
+# Local tooling and browser test output
+.kb-work/
+browser-test-output/
+test-results/
+playwright-report/
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+*.log
+
+# Credentials and personal learner backups (public curriculum JSON is tracked)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+AI-CV-学习记录-*.json
+personal/
+private/
+
+# Distribution archives are built separately
+releases/
+*.zip
+

@@ -1,0 +1,510 @@
+{
+  "version": "0.3.0",
+  "date": "2026-10-19",
+  "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "torch": "2.12.0+cpu",
+  "device": "cpu",
+  "seeds": [
+    7,
+    17,
+    29
+  ],
+  "results": [
+    {
+      "seed": 7,
+      "linear": {
+        "initial_mse": 3.8409371376037598,
+        "final_mse": 8.153478163897693e-14,
+        "w": 1.9999995231628418,
+        "b": 0.9999999403953552
+      },
+      "logistic": {
+        "initial_bce": 0.7659059166908264,
+        "final_bce": 0.1628047227859497,
+        "validation_bce": 0.1278965175151825,
+        "test_accuracy": 1.0,
+        "tp": 48,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "mlp": {
+        "seed": 7,
+        "autograd_dw": -4.0,
+        "conv_shape": [
+          4,
+          2,
+          3,
+          3
+        ],
+        "initial_train_ce": 0.7021413445472717,
+        "final_train_ce": 0.030494937673211098,
+        "best_validation_ce": 0.03295515105128288,
+        "best_epoch": 95,
+        "test_accuracy": 0.987500011920929,
+        "counts": [
+          240,
+          80,
+          80
+        ],
+        "scope": "Synthetic XOR-like data; CNN is a shape check, not CNN training."
+      },
+      "cnn": {
+        "seed": 7,
+        "counts": [
+          240,
+          80,
+          80
+        ],
+        "initial_train_ce": 0.7671358585357666,
+        "final_train_ce": 8.981838618637994e-05,
+        "best_validation_ce": 0.00010017639579018578,
+        "best_epoch": 25,
+        "validation_accuracy": 1.0,
+        "test_accuracy": 1.0,
+        "conv_shape": [
+          2,
+          8,
+          4,
+          4
+        ],
+        "conv_parameters": 224,
+        "residual_shape": [
+          2,
+          16,
+          8,
+          8
+        ],
+        "freeze_gradient_check": true,
+        "scope": "Synthetic bars only; CNN training plus residual/freeze checks, not pretrained transfer."
+      },
+      "q_learning": {
+        "seed": 7,
+        "q": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            -0.9999987740035673,
+            0.8634999978120961
+          ],
+          [
+            0.8003249839706177,
+            0.9299999999999995
+          ],
+          [
+            0.8634999996043073,
+            0.9999999999999998
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "greedy_path": [
+          2,
+          3,
+          4
+        ],
+        "greedy_return": 0.98,
+        "success": true,
+        "scope": "Tiny deterministic state environment; not visual navigation."
+      },
+      "dqn": {
+        "seed": 7,
+        "updates": 573,
+        "last_loss": 6.705747068735946e-13,
+        "greedy_path": [
+          2,
+          3,
+          4
+        ],
+        "greedy_return": 0.98,
+        "success": true,
+        "q": [
+          [
+            0.37236225605010986,
+            0.8339236974716187
+          ],
+          [
+            -0.9999926686286926,
+            0.8635016083717346
+          ],
+          [
+            0.8003281950950623,
+            0.9299995303153992
+          ],
+          [
+            0.8635146021842957,
+            0.9999991059303284
+          ],
+          [
+            0.16602976620197296,
+            0.6744762659072876
+          ]
+        ],
+        "target_gradients_absent": true,
+        "scope": "One-hot state DQN, no CNN; no Atari/Gym benchmark claim."
+      },
+      "policy": {
+        "seed": 7,
+        "first_batch_return": 0.10333333333333332,
+        "last_batch_return": 0.98,
+        "stochastic_evaluation": {
+          "success_rate": 1.0,
+          "mean_return": 0.98
+        },
+        "greedy_evaluation": {
+          "success_rate": 1.0,
+          "mean_return": 0.98
+        },
+        "ppo_clip": {
+          "objective": [
+            2.4000000953674316,
+            -1.600000023841858
+          ],
+          "loss": -0.40000003576278687,
+          "ratio_grad": [
+            0.0,
+            0.0
+          ],
+          "scope": "Clipped surrogate only; not PPO rollout/GAE/critic training."
+        },
+        "scope": "Finite-horizon synthetic corridor; PPO section only checks its objective."
+      }
+    },
+    {
+      "seed": 17,
+      "linear": {
+        "initial_mse": 2.4172885417938232,
+        "final_mse": 8.153478163897693e-14,
+        "w": 1.9999995231628418,
+        "b": 0.9999999403953552
+      },
+      "logistic": {
+        "initial_bce": 0.7354602813720703,
+        "final_bce": 0.13511645793914795,
+        "validation_bce": 0.1570093333721161,
+        "test_accuracy": 1.0,
+        "tp": 47,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "mlp": {
+        "seed": 17,
+        "autograd_dw": -4.0,
+        "conv_shape": [
+          4,
+          2,
+          3,
+          3
+        ],
+        "initial_train_ce": 0.6958609223365784,
+        "final_train_ce": 0.028169747442007065,
+        "best_validation_ce": 0.021690955385565758,
+        "best_epoch": 95,
+        "test_accuracy": 0.987500011920929,
+        "counts": [
+          240,
+          80,
+          80
+        ],
+        "scope": "Synthetic XOR-like data; CNN is a shape check, not CNN training."
+      },
+      "cnn": {
+        "seed": 17,
+        "counts": [
+          240,
+          80,
+          80
+        ],
+        "initial_train_ce": 0.7021487355232239,
+        "final_train_ce": 0.00010537119669606909,
+        "best_validation_ce": 8.409897418459877e-05,
+        "best_epoch": 25,
+        "validation_accuracy": 1.0,
+        "test_accuracy": 1.0,
+        "conv_shape": [
+          2,
+          8,
+          4,
+          4
+        ],
+        "conv_parameters": 224,
+        "residual_shape": [
+          2,
+          16,
+          8,
+          8
+        ],
+        "freeze_gradient_check": true,
+        "scope": "Synthetic bars only; CNN training plus residual/freeze checks, not pretrained transfer."
+      },
+      "q_learning": {
+        "seed": 17,
+        "q": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            -0.9999941539934507,
+            0.8634999985682629
+          ],
+          [
+            0.8003249900737753,
+            0.9299999999999995
+          ],
+          [
+            0.8634999962023222,
+            0.9999999999999998
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "greedy_path": [
+          2,
+          3,
+          4
+        ],
+        "greedy_return": 0.98,
+        "success": true,
+        "scope": "Tiny deterministic state environment; not visual navigation."
+      },
+      "dqn": {
+        "seed": 17,
+        "updates": 545,
+        "last_loss": 8.358665759544692e-09,
+        "greedy_path": [
+          2,
+          3,
+          4
+        ],
+        "greedy_return": 0.98,
+        "success": true,
+        "q": [
+          [
+            -0.13676118850708008,
+            0.32123976945877075
+          ],
+          [
+            -1.0000677108764648,
+            0.8634610772132874
+          ],
+          [
+            0.8003125190734863,
+            0.9300260543823242
+          ],
+          [
+            0.8629968166351318,
+            1.0000213384628296
+          ],
+          [
+            0.22228482365608215,
+            0.5881206393241882
+          ]
+        ],
+        "target_gradients_absent": true,
+        "scope": "One-hot state DQN, no CNN; no Atari/Gym benchmark claim."
+      },
+      "policy": {
+        "seed": 17,
+        "first_batch_return": 0.09999999999999998,
+        "last_batch_return": 0.98,
+        "stochastic_evaluation": {
+          "success_rate": 1.0,
+          "mean_return": 0.98
+        },
+        "greedy_evaluation": {
+          "success_rate": 1.0,
+          "mean_return": 0.98
+        },
+        "ppo_clip": {
+          "objective": [
+            2.4000000953674316,
+            -1.600000023841858
+          ],
+          "loss": -0.40000003576278687,
+          "ratio_grad": [
+            0.0,
+            0.0
+          ],
+          "scope": "Clipped surrogate only; not PPO rollout/GAE/critic training."
+        },
+        "scope": "Finite-horizon synthetic corridor; PPO section only checks its objective."
+      }
+    },
+    {
+      "seed": 29,
+      "linear": {
+        "initial_mse": 2.610485076904297,
+        "final_mse": 8.153478163897693e-14,
+        "w": 1.9999995231628418,
+        "b": 0.9999999403953552
+      },
+      "logistic": {
+        "initial_bce": 0.9063143730163574,
+        "final_bce": 0.15077465772628784,
+        "validation_bce": 0.19015434384346008,
+        "test_accuracy": 0.9900000095367432,
+        "tp": 48,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.9795918367346939
+      },
+      "mlp": {
+        "seed": 29,
+        "autograd_dw": -4.0,
+        "conv_shape": [
+          4,
+          2,
+          3,
+          3
+        ],
+        "initial_train_ce": 0.7009838223457336,
+        "final_train_ce": 0.01944299414753914,
+        "best_validation_ce": 0.044304076582193375,
+        "best_epoch": 86,
+        "test_accuracy": 0.9750000238418579,
+        "counts": [
+          240,
+          80,
+          80
+        ],
+        "scope": "Synthetic XOR-like data; CNN is a shape check, not CNN training."
+      },
+      "cnn": {
+        "seed": 29,
+        "counts": [
+          240,
+          80,
+          80
+        ],
+        "initial_train_ce": 0.7241610884666443,
+        "final_train_ce": 0.00010094099707202986,
+        "best_validation_ce": 0.00010822028707480058,
+        "best_epoch": 25,
+        "validation_accuracy": 1.0,
+        "test_accuracy": 1.0,
+        "conv_shape": [
+          2,
+          8,
+          4,
+          4
+        ],
+        "conv_parameters": 224,
+        "residual_shape": [
+          2,
+          16,
+          8,
+          8
+        ],
+        "freeze_gradient_check": true,
+        "scope": "Synthetic bars only; CNN training plus residual/freeze checks, not pretrained transfer."
+      },
+      "q_learning": {
+        "seed": 29,
+        "q": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            -0.9999992153622831,
+            0.8634999929297762
+          ],
+          [
+            0.8003249567209184,
+            0.9299999999999995
+          ],
+          [
+            0.8634999822466494,
+            0.9999999999999998
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "greedy_path": [
+          2,
+          3,
+          4
+        ],
+        "greedy_return": 0.98,
+        "success": true,
+        "scope": "Tiny deterministic state environment; not visual navigation."
+      },
+      "dqn": {
+        "seed": 29,
+        "updates": 595,
+        "last_loss": 3.522299119040895e-11,
+        "greedy_path": [
+          2,
+          3,
+          4
+        ],
+        "greedy_return": 0.98,
+        "success": true,
+        "q": [
+          [
+            0.18703767657279968,
+            0.7558107376098633
+          ],
+          [
+            -1.000009536743164,
+            0.8635023236274719
+          ],
+          [
+            0.800338625907898,
+            0.9299970269203186
+          ],
+          [
+            0.8634772300720215,
+            1.0000033378601074
+          ],
+          [
+            -0.4096628427505493,
+            0.5974076986312866
+          ]
+        ],
+        "target_gradients_absent": true,
+        "scope": "One-hot state DQN, no CNN; no Atari/Gym benchmark claim."
+      },
+      "policy": {
+        "seed": 29,
+        "first_batch_return": 0.26999999999999996,
+        "last_batch_return": 0.98,
+        "stochastic_evaluation": {
+          "success_rate": 1.0,
+          "mean_return": 0.98
+        },
+        "greedy_evaluation": {
+          "success_rate": 1.0,
+          "mean_return": 0.98
+        },
+        "ppo_clip": {
+          "objective": [
+            2.4000000953674316,
+            -1.600000023841858
+          ],
+          "loss": -0.40000003576278687,
+          "ratio_grad": [
+            0.0,
+            0.0
+          ],
+          "scope": "Clipped surrogate only; not PPO rollout/GAE/critic training."
+        },
+        "scope": "Finite-horizon synthetic corridor; PPO section only checks its objective."
+      }
+    }
+  ],
+  "scope": "Synthetic educational tasks; not real-world evaluation or teacher review."
+}

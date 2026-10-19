@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1d504b">
+  <meta name="description" content="数学与机器学习、深度学习两轮主线，第三轮单独选修。离线知识网络、学习路线与交互实验。">
+  <title>看见智能 · 学习图谱 — AI / CV 学习图谱</title>
+  <link rel="stylesheet" href="site/style.css">
+  <link rel="stylesheet" href="site/upgrade-v2.css">
+  <link rel="stylesheet" href="site/chronicle.css">
+  <script defer src="site/data.js"></script>
+  <script defer src="site/demos.js"></script>
+  <script defer src="site/experiments-v2.js"></script>
+  <script defer src="site/graph3d.js"></script>
+  <script defer src="site/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <aside class="sidebar">
+    <a class="brand" href="#/home" aria-label="看见智能，首页"><span class="brand-icon" aria-hidden="true">◈</span><span>看见智能<span class="brand-sub">LEARNING ATLAS / AI · CV</span></span></a>
+    <div class="edition">一本可以探索的学习手册<span>LOCAL EDITION · 03</span></div>
+    <nav aria-label="主导航">
+      <a href="#/home" data-nav="home"><span aria-hidden="true">⌂</span>学习起点</a>
+      <a href="#/path" data-nav="path"><span aria-hidden="true">↗</span>学习路线</a>
+      <a href="#/graph" data-nav="graph"><span aria-hidden="true">⌘</span>知识网络</a>
+      <a href="#/lab" data-nav="lab"><span aria-hidden="true">◉</span>交互实验室</a>
+      <a href="#/guide" data-nav="guide"><span aria-hidden="true">▤</span>使用与维护</a>
+    </nav>
+    <div class="sidebar-progress"><div class="small-label">前两轮主线进度</div><div class="sidebar-count" id="side-count">0 <span>/ —</span></div><div class="progress-track"><span id="side-bar"></span></div><p>以练习通过计数<br>每一小步，都有迹可循。</p></div>
+    <div class="sidebar-foot"><span class="status-dot"></span>本地学习 · 无需登录<br><small>内容 v0.3 · 数学 / ML / DL</small></div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar"><div class="breadcrumbs" id="breadcrumbs">学习起点</div><div class="top-actions"><button id="search-open" class="search-button"><span aria-hidden="true">⌕</span> 搜索知识 <kbd>/</kbd></button><button id="progress-open" class="button subtle">我的记录</button></div></header>
+    <main id="main" tabindex="-1"></main>
+    <footer class="footer"><span>看见智能 · 学习图谱</span><span>知识是相连的，学习可以一步一步来。</span><a href="#/guide">来源与维护说明 ↗</a></footer>
+  </div>
+  <dialog id="search-dialog" aria-labelledby="search-title"><div class="dialog-head"><h2 id="search-title">找到一个知识点</h2><button class="icon-button" data-close="search-dialog" aria-label="关闭搜索">×</button></div><label class="search-field"><span class="sr-only">搜索标题、内容或关键词</span><input id="search-input" type="search" placeholder="试试：卷积、学习率、矩阵…" autocomplete="off"></label><p class="muted">搜索知识正文与框架节点 · 支持关键词</p><div id="search-results" class="search-results"></div></dialog>
+  <dialog id="progress-dialog" aria-labelledby="progress-title"><div class="dialog-head"><h2 id="progress-title">把学习记录带走</h2><button class="icon-button" data-close="progress-dialog" aria-label="关闭学习记录">×</button></div><div id="progress-summary"></div><p>记录暂存在当前浏览器。移动目录、更换浏览器或清理浏览数据前，请导出备份；在新位置导入即可继续。</p><div class="action-row"><button class="button primary" id="export-progress">导出进度与笔记</button><label class="button" for="import-progress">导入记录</label><input class="sr-only" id="import-progress" type="file" accept="application/json,.json"></div><p class="muted">导入按知识点合并，同一知识点的主动记录保留较新的版本；只打开页面产生的空白记录不会挡住备份恢复。只有明确执行导入后才会写入。导出文件含你的个人笔记，请自行保管。</p><div id="import-result" role="status"></div></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <noscript><p>请允许此页面运行本地 JavaScript，或直接阅读 content/ 下的 Markdown 正文。</p></noscript>
+</body>
+</html>
