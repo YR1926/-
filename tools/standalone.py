@@ -41,7 +41,7 @@ def build():
         return ''
 
     page = re.sub(r'<link rel="stylesheet" href="([^"]+)">', stylesheet, page)
-    page = re.sub(r'<script defer src="([^"]+)"></script>', javascript, page)
+    page = re.sub(r'[ \t]*<script defer src="([^"]+)"></script>', javascript, page)
     if len(scripts) != 5 or re.search(r'<script[^>]+src=|<link[^>]+stylesheet', page):
         raise ValueError('Review changed index.html dependencies before building the portable edition')
 
